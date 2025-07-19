@@ -27,7 +27,7 @@ jobs:
           python scraper.py
 
       - name: Upload weather JSON
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           # you can name the artifact anything; 
           # the file inside will be a timestamped JSON
