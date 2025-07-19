@@ -1,2 +1,3 @@
 # weather-scraper
-Gi
+
+GitHub Action to scrape the weather 🌥️⛅🌦️
