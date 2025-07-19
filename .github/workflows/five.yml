@@ -1,10 +1,10 @@
-# .github/workflows/ten‑minute‑runner.yml
+# .github/workflows/five .yml
 name: Five‑Minute Runner
 
 on:
   schedule:
     - cron: '*/5 * * * *'    # every 5 minutes, UTC
-  workflow_dispatch:         # optional manual trigger
+  # workflow_dispatch:         # optional manual trigger
 
 jobs:
   every5minutes:
