@@ -1,0 +1,15 @@
+# .github/workflows/ten‑minute‑runner.yml
+name: Five‑Minute Runner
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'    # every 5 minutes, UTC
+  workflow_dispatch:         # optional manual trigger
+
+jobs:
+  every5minutes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run your task
+        run: |
+          echo "This runs every 10 minutes — current time is $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
