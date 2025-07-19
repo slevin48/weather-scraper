@@ -33,3 +33,6 @@ jobs:
           # the file inside will be a timestamped JSON
           name: boston-weather
           path: boston_*.json
+
+env:
+  OWM_KEY: ${{secrets.OWM_KEY}}
