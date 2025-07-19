@@ -1,0 +1,33 @@
+name: Weather scraper
+on:
+  workflow_dispatch:
+jobs:
+  get_weather:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      # Optional: install dependencies if you have a requirements.txt
+      - name: Install dependencies
+        if: file.exists('requirements.txt')
+        run: pip install -r requirements.txt
+
+      - name: Run scraper
+        run: |
+          # scraper.py should create a file named like:
+          # boston_19-Jul-2025_21-00-00.json
+          python scraper.py
+
+      - name: Upload weather JSON
+        uses: actions/upload-artifact@v3
+        with:
+          # you can name the artifact anything; 
+          # the file inside will be a timestamped JSON
+          name: boston-weather
+          path: boston_*.json
