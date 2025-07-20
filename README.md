@@ -6,6 +6,8 @@ GitHub Action to scrape the weather️
 
 ![image_0.png](README_media/image_0.png)
 
+Inspiration: https://simonwillison.net/2020/Oct/9/git-scraping/
+
 <a name="beginToc"></a>
 
 ## Table of Contents
