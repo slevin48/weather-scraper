@@ -28,13 +28,14 @@ jobs:
           # boston_19-Jul-2025_21-00-00.json
           python scraper.py
 
-      - name: Upload weather JSON
-        uses: actions/upload-artifact@v4
-        with:
-          # you can name the artifact anything; 
-          # the file inside will be a timestamped JSON
-          name: boston-weather
-          path: boston_*.json
+      - name: Commit and push if it changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          timestamp=$(date -u)
+          git commit -m "Latest data: ${timestamp}" || exit 0
+            git push
 
 env:
   OWM_KEY: ${{secrets.OWM_KEY}}
